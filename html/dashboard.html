@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+        <link rel = "stylesheet" href="../css/navbar.css">
+        <link rel = "stylesheet" href="../css/dashboard.css">
+        <script src="../js/dashboard.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
+    <title>DashBoard</title>
+</head>
+
+<body onload="carregaDash()">
+
+    <nav class="navbar navbar-expand-lg navbar-dark" id="dashcard">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-2">
+                    <img src="../images/itau-logo-1.png" width="35px">
+                </div>
+                <div class="col-8">
+                    <a class="navbar-brand"><b>Sistema DashCard</b></a>
+                </div>
+            </div>
+
+            <li class="nav-item dropdown" id="li">
+                <div class="d-flex">
+                    <a class="nav-link dropdown-toggle" href="#" id="nomeUsuario" role="button" data-bs-toggle="dropdown" aria-expanded="false"></a>
+                        
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown" id="dropDownItens"></ul>
+                        <button class="btn btn-primary" type="button" onClick="deslogar()">Logout</button>
+                </div>
+            </li>
+        </div>
+    </nav>
+
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2>DashBoard do Agente Financeiro</h2>
+            </div>
+        </div>
+        <br>
+        <br>
+        <fieldset>
+            <legend>Parceiro</legend>
+            <div class="row">
+                <div id="infoAgente">
+                    <h5 class="card-title" id="nomeAgente">***</h5>
+                    <p class="card-text" id="volumeAgente">***</p>
+                </div>
+            </div>
+        </fieldset>
+        <br>
+        <div class="row">
+            <div class="col-4">
+        <fieldset>
+            <legend id="sucessoDiv">Sucessos</legend>
+                <div>
+                    <h5 class="card-title" id="sucesso">***</h5>
+                </div>
+            </fieldset>
+        </div>
+        <div class="col-4">
+        <fieldset>
+            <legend id="falhaDiv">Falhos</legend>
+                <div>
+                    <h5 class="card-title" id="falhas">***</h5>
+                </div>
+            </fieldset>
+        </div>
+        <div class="col-4">
+        <fieldset>
+            <legend id="fraudeDiv">Fraudes</legend>
+                <div>
+                    <h5 class="card-title" id="fraudes">***</h5>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+        <br><br>
+        <canvas id="meuGrafico" width="50px">
+        
+        </canvas>
+        <br>
+        <button type="button" onclick="voltar()"class="btn btn-primary">Voltar</button>
+    </div>
+    <br>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
